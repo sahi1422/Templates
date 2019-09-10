@@ -1,5 +1,5 @@
 
-ll modadd(ll a,ll b){		//modulo arithmetic
+ll modadd(ll a,ll b){		//mod arithmetic
 	a%=mod;
 	b%=mod;
 	ll ans=(a+b)%mod;
