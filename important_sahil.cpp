@@ -124,6 +124,9 @@ void dijktras(int s,vector<int> &d,vector<int> &p){
 		int v=q.top().sec;
 		int d_v=q.top().fi;
 		q.pop();
+		if(d_v!=d[v])
+			continue;
+		
 		for(auto node:adj[v]){
 			int to=node.fi;
 			int len=node.sec;
