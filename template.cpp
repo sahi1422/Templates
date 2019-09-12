@@ -17,6 +17,8 @@
 #define printv(v) out #v<<"is :\n"; \
 			for(int i=0;i<v.size();i++) \
 				out " "<<v[i];
+#define inmax INT_MAX
+#define lmax LONG_LONG_MAX
 using namespace std;
 ll extgcd(ll a,ll b,ll& x,ll& y){if(b==0){x=1;y=0;return a;}else{int g=extgcd(b,a%b,y,x);y-=a/b*x;return g;}}
 ll modpow(ll a,ll b){ll res=1;a%=mod;for(;b;b>>=1){if(b&1)res=res*a%mod;a=a*a%mod;}return res;}
