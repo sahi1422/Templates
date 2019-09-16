@@ -140,6 +140,17 @@ void dijktras(int s,vector<int> &d,vector<int> &p){
 	
 }
 
+vector<vector<ll>> adj;	//DFS
+vector<bool> mark;
+void dfs(ll v){
+	mark[v]=true;
+	for(auto node:adj[v]){
+		if(!mark[node]){
+			dfs(node);
+		}
+	}
+}
+
 
 
 
