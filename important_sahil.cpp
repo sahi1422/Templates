@@ -152,7 +152,29 @@ void dfs(ll v){
 }
 
 
-
+vector<ll> parent,size;		//DSU
+void make_set(ll u){
+	parent[u]=u;
+	size[u]=1;
+}
+ll find_set(ll v){
+	if(v==parent[v])
+		return v;
+	parent[v]=find_set(parent[v]);
+	return parent[v];
+}
+void union_set(ll a,ll b){
+	a=find_set(a);
+	b=find_set(b);
+	if(a!=b){
+		if(size[b]>size[a])
+			swap(a,b);
+		parent[b]=a;
+		size[a]+=size[b];
+	}
+}
+for(int i=1;i<=n;i++)
+	make_set(i);
 
 
 
