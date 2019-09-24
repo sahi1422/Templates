@@ -178,3 +178,41 @@ for(int i=1;i<=n;i++)
 
 
 
+
+typedef struct uvw{			//Kruskal
+	ll u,v,w;
+}uvw;
+
+bool f(uvw a,uvw b){
+	return a.w<b.w;
+}
+
+void kruskal(){
+	ll n,edges;
+	in n>>edges;
+	for(int i=1;i<=n;i++)
+		make_set(i);
+	vector<uvw> v;
+	while(edges--){
+		uvw temp;
+		in temp.u>>temp.v>>temp.w;
+		v.pb(temp);
+	}
+	sort(all(v),f);
+	ll cost=0;
+	vector<uvw> result;
+	for(auto edge:v){
+		if(find_set(edge.u)!=find_set(edge.v)){
+			union_build(edge.u,edge.v);
+			result.pb(edge);
+			cost+=edge.w;
+		}
+	}
+	for(auto edge:result){
+		out edge.u<<" "<<edge.v<<"\t"<<edge.w<<"\n";
+	}
+	w(cost);
+}
+
+
+

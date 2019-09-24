@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #define ll long long
+#define db double
 #define pb push_back
 #define all(a)                      a.begin(), a.end()
 #define mod 1000000007
@@ -17,11 +18,12 @@
 #define printv(v) out #v<<"is :\n"; \
 			for(int i=0;i<v.size();i++) \
 				out " "<<v[i];
+#define printv(v,from,to) out #v<<"is :\n"; \
+			for(int i=to;i<=from;i++) \
+				out " "<<v[i];
 #define inmax INT_MAX
 #define lmax LONG_LONG_MAX
 using namespace std;
-ll extgcd(ll a,ll b,ll& x,ll& y){if(b==0){x=1;y=0;return a;}else{int g=extgcd(b,a%b,y,x);y-=a/b*x;return g;}}
-ll modpow(ll a,ll b){ll res=1;a%=mod;for(;b;b>>=1){if(b&1)res=res*a%mod;a=a*a%mod;}return res;}
 
 int main() {
 	ios_base::sync_with_stdio(false);
@@ -31,6 +33,7 @@ int main() {
 	while(t--){
 
 	}
-//	cout<<endl;
+	out "\n";
 	return 0;
 }
+
