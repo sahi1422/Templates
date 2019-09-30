@@ -6,12 +6,12 @@
 #define mod 1000000007
 #define out cout<<
 #define in cin>>
-#define w(param) out "\n\t "<<#param<<" is : "<<param
+#define w(param) out "\n\t "<<#param<<" is : "<<param<<"\n"
 #define fi first
 #define sec second
 #define pii pair<int,int>
 #define maxn 100005
-#define invv(from,to,v) for(int i=from;i<to;i++) \
+#define invv(from,to,v) for(int i=from;i<=to;i++) \
 						in v[i];
 #define inv(v) for(int i=0;i<v.size();i++) \
 				in v[i];
@@ -19,7 +19,7 @@
 			for(int i=0;i<v.size();i++) \
 				out " "<<v[i];
 #define printv(v,from,to) out #v<<"is :\n"; \
-			for(int i=to;i<=from;i++) \
+			for(int i=from;i<=to;i++) \
 				out " "<<v[i];
 #define inmax INT_MAX
 #define lmax LONG_LONG_MAX
