@@ -11,14 +11,14 @@
 #define sec second
 #define pii pair<int,int>
 #define maxn 100005
-#define invv(from,to,v) for(int i=from;i<=to;i++) \
+#define invv(v,from,to) for(int i=from;i<=to;i++) \
 						in v[i];
 #define inv(v) for(int i=0;i<v.size();i++) \
 				in v[i];
 #define printv(v) out #v<<"is :\n"; \
 			for(int i=0;i<v.size();i++) \
 				out " "<<v[i];
-#define printv(v,from,to) out #v<<"is :\n"; \
+#define printvv(v,from,to) out #v<<"is :\n"; \
 			for(int i=from;i<=to;i++) \
 				out " "<<v[i];
 #define inmax INT_MAX
