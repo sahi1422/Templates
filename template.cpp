@@ -10,6 +10,9 @@
 #define fi first
 #define sec second
 #define pii pair<int,int>
+#define piii pair<int,pair<int,int>>
+#define pll pair<long long,long long>
+#define plll pair<long long,pair<long long,long long>>
 #define maxn 100005
 #define invv(v,from,to) for(int i=from;i<=to;i++) \
 						in v[i];
@@ -23,6 +26,7 @@
 				out " "<<v[i];
 #define inmax INT_MAX
 #define lmax LONG_LONG_MAX
+#define nl out "\n"
 using namespace std;
 
 int main() {
