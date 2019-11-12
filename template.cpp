@@ -20,16 +20,18 @@
 				in v[i];
 #define printv(v) out #v<<"is :\n"; \
 			for(int i=0;i<v.size();i++) \
-				out " "<<v[i];
+				out " "<<v[i];\
+				out "\n\n\n";
 #define printvv(v,from,to) out #v<<"is :\n"; \
 			for(int i=from;i<=to;i++) \
-				out " "<<v[i];
+				out " "<<v[i];\
+				out "\n\n\n";
 #define inmax INT_MAX
 #define lmax LONG_LONG_MAX
 #define nl out "\n"
 using namespace std;
 
-int main() {
+signed main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);	
 	ll t;
@@ -40,4 +42,5 @@ int main() {
 	out "\n";
 	return 0;
 }
+
 
