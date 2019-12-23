@@ -215,4 +215,46 @@ void kruskal(){
 }
 
 
+ll n,timer,l;						//lca - binary lifting
+vector<vector<ll>> adj,up;
+vector<ll> tin,tout;
+
+void dfs(ll v,ll p){
+	tin[v]=++timer;
+	up[v][0]=p;
+	for(int i=1;i<=l;i++)
+		up[v][i]=up[up[v][i-1]][i-1];
+	for(auto u:adj[v])
+		if(u!=p)
+			dfs(u,v);
+	tout[v]=++timer;
+}
+
+void pre(ll root){
+	l=ceil(log2(n));
+	timer=0;
+	up.clear();
+	up.assign(n+1,vector<ll>(l+1));
+	tin.resize(n+1);
+	tout.resize(n+1);
+	dfs(root,root);
+}
+
+bool is_ancestor(ll u,ll v){
+	return tin[u]<=tin[v] && tout[u]>=tout[v];
+}
+
+ll lca(ll u,ll v){
+	if(is_ancestor(u,v))
+		return u;
+	if(is_ancestor(v,u))
+		return v;
+	for(int i=l;i>=0;i--)
+		if(!is_ancestor(up[u][i],v))
+			u=up[u][i];
+	return up[u][0];
+}
+
+
+
 
