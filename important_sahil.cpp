@@ -256,5 +256,36 @@ ll lca(ll u,ll v){
 }
 
 
+vector<vector<ll>> adj;							//Offline bridges
+vector<ll> tin,low;
+vector<bool> visited;
+ll n,timer;
+
+void dfs(ll v,ll p){
+	visited[v]=true;
+	tin[v]=low[v]=++timer;
+	for(ll u:adj[v]){
+		if(u==p)
+			continue;
+		if(visited[u]){
+			low[v]=min(low[v],tin[u]);
+		}else{
+			dfs(u,v);
+			if(tin[v]<low[u])
+				out u<<" "<<v<<"\n";
+			low[v]=min(low[v],low[u]);
+		}
+	}
+}
+
+void pre(){
+	timer=0;
+	tin.resize(n+1);
+	low.resize(n+1);
+	visited.assign(n+1,false);
+	for(int i=1;i<=n;i++)
+		if(!visited[i])
+			dfs(i,i);
+}
 
 
