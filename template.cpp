@@ -9,6 +9,8 @@
 #define w(param) out "\n\t "<<#param<<" is : "<<param<<"\n"
 #define fi first
 #define sec second
+#define vll vector<ll>
+#define vvll vector<vector<ll>>
 #define pii pair<int,int>
 #define piii pair<int,pair<int,int>>
 #define pll pair<long long,long long>
