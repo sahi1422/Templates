@@ -277,7 +277,6 @@ void dfs(ll v,ll p){
 		}
 	}
 }
-
 void pre(){
 	timer=0;
 	tin.resize(n+1);
@@ -286,6 +285,53 @@ void pre(){
 	for(int i=1;i<=n;i++)
 		if(!visited[i])
 			dfs(i,i);
+}
+
+
+
+
+vvll adj,trans;							// strongly connected components...Tarjon's algorithm
+vbool visited;
+vll stacks,component;
+void dfs1(ll v){
+	visited[v]=true;
+	for(auto u:adj[v])
+		if(!visited[u])
+			dfs1(u);
+	stacks.pb(v);
+}
+void dfs2(ll v){
+	visited[v]=true;
+	for(auto u:trans[v])
+		if(!visited[u])
+			dfs2(u);
+	component.pb(v);
+}
+
+int main(){
+	ll n,m;
+	in n>>m;
+	adj.resize(n+1);
+	trans.resize(n+1);
+	while(m--){
+		ll u,v;
+		in u>>v;
+		adj[u].pb(v);
+		trans[v].pb(u);
+	}
+	visited.assign(n+1,false);
+	for(int i=1;i<=n;i++)
+		if(!visited[i])
+			dfs1(i);
+	visited.assign(n+1,false);
+
+	for(int i=n-1;i>=0;i--)
+		if(!visited[stacks[i]]){
+			component.clear();
+			dfs2(stacks[i]);
+			PRINT component;
+		}
+	return 0;
 }
 
 
