@@ -1,5 +1,5 @@
 
-ll modadd(ll a,ll b){		//mod arithmetic
+ll modadd(ll a,ll b){					//mod arithmetic
 	a%=mod;
 	b%=mod;
 	ll ans=(a+b)%mod;
@@ -22,7 +22,7 @@ ll modsub(ll a,ll b){
 	return ans;
 }
 
-//Segment tree [Range based Summation]
+					//Segment tree [Range based Summation]
 vector<int> t(400020),a(100005);
 void build(int v,int tl,int tr){
 	if(tl==tr)
@@ -58,7 +58,7 @@ void update(int v,int tl,int tr,int pos,int val){
 }
 
 
-//Lazy Seg tree [Range based update & query][sum]
+									//Lazy Seg tree [Range based update & query][sum]
 vector<int> t(400020),lazy(400020,0),a(100005);
 void build(int v,int tl,int tr){
 	if(tl==tr)
@@ -140,7 +140,7 @@ void dijktras(int s,vector<int> &d,vector<int> &p){
 	
 }
 
-vector<vector<ll>> adj;	//DFS
+vector<vector<ll>> adj;				//DFS
 vector<bool> mark;
 void dfs(ll v){
 	mark[v]=true;
@@ -152,7 +152,7 @@ void dfs(ll v){
 }
 
 
-vector<ll> parent,size;		//DSU
+vector<ll> parent,size;							//DSU
 void make_set(ll u){
 	parent[u]=u;
 	size[u]=1;
@@ -179,7 +179,7 @@ for(int i=1;i<=n;i++)
 
 
 
-typedef struct uvw{			//Kruskal
+typedef struct uvw{						//Kruskal
 	ll u,v,w;
 }uvw;
 
@@ -215,7 +215,7 @@ void kruskal(){
 }
 
 
-ll n,timer,l;						//lca - binary lifting
+ll n,timer,l;								//lca - binary lifting
 vector<vector<ll>> adj,up;
 vector<ll> tin,tout;
 
@@ -256,7 +256,7 @@ ll lca(ll u,ll v){
 }
 
 
-vector<vector<ll>> adj;							//Offline bridges
+vector<vector<ll>> adj;								//Offline bridges
 vector<ll> tin,low;
 vector<bool> visited;
 ll n,timer;
@@ -333,5 +333,23 @@ int main(){
 		}
 	return 0;
 }
+
+vbool prime(1e7+5,true);							//Sieve (prime or not)
+void se(){
+	int n=1e7+2;
+	prime[0]=prime[1]=false;
+	for(int i=2;i*i<n;i++)
+		if(prime[i])
+			for(int j=i*i;j<n;j+=i)
+				prime[j]=false;
+}
+
+
+
+
+
+
+
+
 
 
