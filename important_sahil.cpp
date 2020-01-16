@@ -345,6 +345,17 @@ void se(){
 }
 
 
+void floyd(){		//d[i][i]=0 , if there is a edge with weight W b/w i & j, then d[i][j]=W else d[i][j]=inmax
+	for(int k=0;k<n;k++){
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(d[i][j]>d[i][k]+d[k][j]){
+					d[i][j]=d[i][k]+d[k][j];
+				}
+			}
+		}
+	}
+}
 
 
 
